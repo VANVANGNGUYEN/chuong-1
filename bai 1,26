@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct MatHang
+{
+    int DonGia;
+    char TenMatHang[30];
+    int SoLuongTon;
+};
+typedef struct MatHang MATHANG;
+
+void NhapMatHang(MATHANG &mh)
+{
+    printf("Nhap don gia: \n");
+    scanf("%d", &mh.DonGia);
+
+    fflush(stdin);
+    printf("Nhap vao ten mat hang: \n");
+    gets(mh.TenMatHang);
+
+    printf("Nhap vao so luong ton: \n");
+    scanf("%f", &mh.SoLuongTon);
+}
+
+void XuatMatHang(MATHANG mh)
+{
+    printf("DonGia: %d\n", mh.DonGia);
+    printf("TenMatHang: %s\n", mh.TenMatHang);
+    printf(" SoLuongTon: %.2f (km^2)\n", mh. SoLuongTon);
+}
+
+int main()
+{
+    DONGIA (mh1);
+    TENMATHANG(mh1);
+     
+    SOLUONGTON(mh1);
+
+    getch();
+    return 0;
+}
