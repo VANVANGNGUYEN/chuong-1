@@ -1,0 +1,63 @@
+# chuong-1
+#include<stdio.h>
+#include<conio.h>
+
+struct Ngay
+{
+       int Day, Month, Year;
+};
+typedef Ngay NGAY;
+struct CauThu
+{
+    char MaCauThu[20];
+    char TenCauThu[30];
+    NGAY NgaySinh;
+};
+typedef CauThu CAUTHU;
+void NhapNgay(NGAY &ng)
+{
+    printf("\nNhap ngay: ");
+    scanf("%d", &ng.Day);
+
+    printf("\nNhap thang: ");
+    scanf("%d", &ng.Month);
+
+    printf("\nNhap nam: ");
+    scanf("%d", &ng.Year);
+}
+void XuatNgay(NGAY ng)
+{
+    printf("%d-%d-%d", ng.Day, ng.Month, ng.Year);
+}
+
+void NhapCauThu(CAUTHU &ct)
+{
+    fflush(stdin);
+    printf("Nhap ma cau thu: \n");
+    gets(ct.MaCauThu);
+
+    fflush(stdin);
+    printf("Nhap ten cau thu: \n");
+    gets(ct.TenCauThu);
+
+    printf("Nhap ngay sinh: \n");
+    NhapNgay(ct.NgaySinh);
+}
+
+void XuatCauThu(CAUTHU ct)
+{
+    printf("Ma cau thu: %s\n", ct.MaCauThu);
+    printf("Ten cau thu: %s\n", ct.TenCauThu);
+    printf("Ngay sinh: \n");
+    XuatNgay(ct.NgaySinh);
+}
+
+int main()
+{
+    CAUTHU a;
+    NhapCauThu(a);
+    XuatCauThu(a);
+
+    getch();
+    return 0;
+}
